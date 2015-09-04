@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html lang="en" ng-app="myApp" class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html lang="en" ng-app="GecorCiudadano" class="no-js"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>GECOR Ciudadano</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- TEST
+    <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/normalize.css">
+    <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/main.css">
+  -->
+  <link rel="stylesheet" href="app.css">
+
+  <!-- Font awesome -->
+    <link href="components/font-awesome/css/font-awesome.css" rel="stylesheet">
+    <link href="components/css/animate.css" rel="stylesheet">
+    <link href="components/css/core.css" rel="stylesheet">
+    <!--
+    <link href="components/css/foundation.min.css" rel="stylesheet">
+    -->
+    <!-- Bootstrap
+      <link href="components/css/bootstrap.min.css" rel="stylesheet">
+    -->
+    <!-- materialize -->
+    <link href="bower_components/materialize/dist/css/materialize.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <script src="bower_components/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>
+</head>
+<body>
+  <!--[if lt IE 7]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+  <![endif]-->
+  <!--
+  <nav class="top-bar" data-topbar role="navigation">
+    <ul class="title-area">
+      <li class="name">
+        <h1><a>GECOR Ciudadano</a></h1>
+      </li>
+    </ul>
+  </nav>
+  -->
+<!-- -->
+  <nav>
+   <div class="nav-wrapper black">
+     <div class="container">
+       <a data-activates="nav-mobile" class="button-collapse top-nav right" data-sidenav="right" data-closeonclick="false"><i
+             class="mdi-navigation-menu"></i></a>
+     </div>
+     <a class="brand-logo">GECOR Ciudadano</a>
+     <ul class="right hide-on-med-and-down">
+       <li><a ><i class="material-icons">search</i></a></li>
+       <li><a href='#demoModal' modal dismissible="false"><i class="material-icons">view_module</i></a></li>
+       <li><a ><i class="material-icons">refresh</i></a></li>
+       <li><a ><i class="material-icons">more_vert</i></a></li>
+     </ul>
+     <ul class="side-nav" id="nav-mobile">
+       <li><a ><i class="material-icons">search</i></a></li>
+       <li><a href='#demoModal' modal ><i class="material-icons">view_module</i></a></li>
+       <li><a ><i class="material-icons">refresh</i></a></li>
+       <li><a ><i class="material-icons">more_vert</i></a></li>
+      </ul>
+   </div>
+ </nav>
+
+  <div ng-view></div>
+
+  <!-- In production use:
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
+  -->
+  <script src="bower_components/jquery/dist/jquery.js"></script>
+  <script src="bower_components/angular/angular.js"></script>
+  <script src="bower_components/angular-route/angular-route.js"></script>
+
+  <script src='bower_components/lodash/lodash.min.js'></script>
+  <script src='bower_components/angular-google-maps/dist/angular-google-maps_dev_mapped.js'></script>
+
+  <!-- PLUGINS  -->
+  <script src="bower_components/oclazyload/dist/ocLazyLoad.min.js"></script>
+  <script src="bower_components/materialize/dist/js/materialize.min.js"></script>
+  <script src="bower_components/materialize/dist/js/angular-materialize.js"></script>
+  <!--
+  <script src="bower_components/angular-foundation/mm-foundation-tpls.min.js"></script>
+  -->
+
+  <!-- APP -->
+  <script src="app.js"></script>
+
+  <!--Controllers-->
+  <script src="map/mapController.js"></script>
+  <script src="loginRegister/loginController.js"></script>
+  <script src="principal/principalController.js"></script>
+
+  <!--Services-->
+  <script src="loginRegister/loginService.js"></script>
+</body>
+</html>

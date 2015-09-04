@@ -1,0 +1,89 @@
+<div class="had-container">
+  <main class="main">
+    <!-- MAP SECTION -->
+    <ui-gmap-google-map
+            center="map.center"
+            zoom="map.zoom"
+            dragging="map.dragging"
+            bounds="map.bounds"
+            events="map.events"
+            options="map.options"
+            pan="true"
+            control="map.control"
+            >
+        <!--to add as a map control -->
+        <!--
+        <ui-gmap-map-control template="control.tpl.html" position="top-left" ></ui-gmap-map-control>
+         -->
+        <ui-gmap-search-box ng-show="false" options="searchbox.options" template="searchbox.template"
+          events="searchbox.events" position="searchbox.position">
+        </ui-gmap-search-box>
+
+
+
+        <!--to add to a parent div-->
+        <!--<ui-gmap-search-box options="searchbox.options" template="searchbox.template" events="searchbox.events" parentdiv="searchbox.parentdiv"></ui-gmap-search-box>-->
+
+        <!--
+        <ui-gmap-markers idkey="map.idkey" models="map.markers" coords="'self'" icon="'icon'"
+                         click="'onClicked'" fit="true"></ui-gmap-markers>
+        -->
+          <ui-gmap-marker coords="map.marker.coords" options="map.marker.options" events="map.marker.events" idkey="map.idkey">
+            <!--<ui-gmap-window templateUrl="'templates/street-view-window.html'" templateParameter="map.marker"></ui-gmap-window>-->
+          </ui-gmap-marker>
+
+        <ui-gmap-window coords="selected" idkey="selected.place_id" templateurl="selected.templateurl"
+                        templateparameter="selected.templateparameter" options="selected.options"
+                        closeClick='selected.closeClick()' ng-cloak>
+
+        </ui-gmap-window>
+
+
+      </ui-gmap-google-map>
+
+
+
+    <!-- Button SECTION -->
+    <button-menu markers-array="apps"></button-menu>
+
+    <span ng-click="geolocateMe();open()" class="crosshairs__button txt-center"><a href='#demoModal' modal></a><i class="material-icons crosshairs__icon">my_location</i></span>
+
+  <div moving-aside valor="svState" class="panoramic" >
+    <!-- LEFT COLUMN BAR -->
+     <div class="panoramicMenu"  >
+       <i ng-hide="svState" ng-click="openSv()" class="fa fa-caret-left fa"></i>
+       <i ng-show="svState" ng-click="closeSv()" class="fa fa-times fa"></i>
+   </div>
+   <!-- STREET VIEW CANVAS -->
+   <!--<div class="streetviewHolder">-->
+     <ui-gmap-street-view-panorama focalCoord="streetView.parameter" options="streetView.options" radius="50" events="streetView.events"></ui-gmap-street-view-panorama>
+   <!--</div>-->
+  </div>
+  </main>
+</div>
+
+<!-- Modal Structure -->
+<div id="demoModal" class="modal">
+    <div class="modal-content">
+      <div class="row">
+       <form class="col s12">
+         <div class="row">
+           <div class="input-field col s6">
+             <i class="material-icons prefix">account_circle</i>
+             <input id="email" type="email" class="validate" ng-model="Email">
+             <label for="email" data-error="wrong" data-success="right">Email</label>
+          
+           </div>
+           <div class="input-field col s6">
+             <i class="material-icons prefix">vpn_key</i>
+             <input id="email" type="password" class="validate" ng-model="Password">
+             <label for="email" data-error="wrong" data-success="right">Pass</label>
+           </div>
+         </div>
+       </form>
+      </div>
+    </div>
+    <div class="modal-footer">
+        <a ng-click="testLogin()" class=" modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
+    </div>
+</div>
